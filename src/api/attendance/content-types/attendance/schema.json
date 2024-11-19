@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "singularName": "attendance",
+    "pluralName": "attendances",
+    "displayName": "Attendance"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 6
+    },
+    "codeStatus": {
+      "type": "enumeration",
+      "enum": [
+        "NOT_CONFIRMED",
+        "CONFIRMED",
+        "EXPIRATED"
+      ],
+      "default": "NOT_CONFIRMED",
+      "required": true
+    },
+    "expirationDate": {
+      "type": "datetime"
+    }
+  }
+}

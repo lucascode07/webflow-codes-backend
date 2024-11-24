@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAttendanceAttendance extends Struct.CollectionTypeSchema {
   collectionName: 'attendances';
   info: {
+    description: '';
     displayName: 'Attendance';
     pluralName: 'attendances';
     singularName: 'attendance';
@@ -387,20 +388,28 @@ export interface ApiAttendanceAttendance extends Struct.CollectionTypeSchema {
         maxLength: 6;
       }>;
     codeStatus: Schema.Attribute.Enumeration<
-      ['NOT_CONFIRMED', 'CONFIRMED', 'EXPIRATED']
+      ['NOT_CONFIRMED', 'CONFIRMED', 'EXPIRED', 'RECONFIRMED']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'NOT_CONFIRMED'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Unique;
     expirationDate: Schema.Attribute.DateTime;
+    fullName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::attendance.attendance'
     > &
       Schema.Attribute.Private;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 9;
+        minLength: 9;
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

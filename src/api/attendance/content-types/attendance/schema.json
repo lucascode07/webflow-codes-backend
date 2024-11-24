@@ -4,7 +4,8 @@
   "info": {
     "singularName": "attendance",
     "pluralName": "attendances",
-    "displayName": "Attendance"
+    "displayName": "Attendance",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -22,13 +23,28 @@
       "enum": [
         "NOT_CONFIRMED",
         "CONFIRMED",
-        "EXPIRATED"
+        "EXPIRED",
+        "RECONFIRMED"
       ],
       "default": "NOT_CONFIRMED",
       "required": true
     },
     "expirationDate": {
       "type": "datetime"
+    },
+    "fullName": {
+      "type": "string",
+      "required": false
+    },
+    "phone": {
+      "type": "string",
+      "unique": true,
+      "maxLength": 9,
+      "minLength": 9
+    },
+    "email": {
+      "type": "email",
+      "unique": true
     }
   }
 }

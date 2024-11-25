@@ -396,7 +396,6 @@ export interface ApiAttendanceAttendance extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Email & Schema.Attribute.Unique;
-    expirationDate: Schema.Attribute.DateTime;
     fullName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

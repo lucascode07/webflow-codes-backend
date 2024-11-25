@@ -29,9 +29,6 @@
       "default": "NOT_CONFIRMED",
       "required": true
     },
-    "expirationDate": {
-      "type": "datetime"
-    },
     "fullName": {
       "type": "string",
       "required": false

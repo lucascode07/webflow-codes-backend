@@ -22,7 +22,7 @@ module.exports = {
     },
     options: {
       //   rule: "0 0 0 16 12 *",
-      rule: "0 0 10 25 11 *",
+      rule: "0 30 22 27 11 *",
       tz: "America/Lima",
     },
   },

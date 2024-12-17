@@ -5,7 +5,7 @@ module.exports = {
         .query("api::attendance.attendance")
         .findMany({
           where: {
-            codeStatus: "NOT_CONFIRMED",
+            codeStatus: "CONFIRMED",
           },
         });
 
@@ -21,7 +21,7 @@ module.exports = {
       console.log("CÓDIGOS NO CONFIRMADOS ACTUALIZADOS A EXPIRADOS");
     },
     options: {
-        rule: "0 0 0 17 12 *",
+        rule: "0 0 0 20 12 *",
       tz: "America/Lima",
     },
   },

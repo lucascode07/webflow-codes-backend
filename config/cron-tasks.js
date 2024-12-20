@@ -21,7 +21,7 @@ module.exports = {
       console.log("CÓDIGOS NO CONFIRMADOS ACTUALIZADOS A EXPIRADOS");
     },
     options: {
-        rule: "0 0 0 20 12 *",
+        rule: "0 59 23 20 12 *",
       tz: "America/Lima",
     },
   },
